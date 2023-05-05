@@ -1,0 +1,31 @@
+import "./app.css";
+
+import AppInfo from "../app-info/app-info";
+import SearchPanel from "../search-panel/search-panel";
+import AppFilter from "../app-filter/app-filter";
+import EmployeesList from "../employees-list/employees-list";
+import EmployeesAddForm from "../employees-add-form/employees-add-form";
+
+const App = () => {
+  const data = [
+    { name: "Alex C.", salary: 1550, increased: false, id: 1 },
+    { name: "John D.", salary: 3200, increased: false, id: 2 },
+    { name: "Joe W.", salary: 700, increased: true, id: 3 },
+    { name: "Robert T.", salary: 1300, increased: false, id: 4 },
+  ];
+
+  return (
+    <div className="app">
+      <AppInfo />
+      <div className="search-panel">
+        <SearchPanel />
+        <AppFilter />
+      </div>
+
+      <EmployeesList data={data} />
+      <EmployeesAddForm />
+    </div>
+  );
+};
+
+export default App;
